@@ -81,7 +81,7 @@ def CONFIRMING_SUBSCRIBE(message, list_name=None, id_number=None, host=None):
                            Subject="Welcome to %(list_name)s list.")
         relay.deliver(msg)
 
-        CONFIRM.cancel(list_name, message['from'], id_number)
+        CONFIRM.cancel(list_name, message.route_from, id_number)
 
         return POSTING
     else:
