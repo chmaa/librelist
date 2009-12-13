@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>librelist.com</title><link>http://librelist.com</link><description>No logins. No tracking. Just lists.</description><lastBuildDate>Thu, 03 Dec 2009 23:58:26 GMT</lastBuildDate><generator>PyRSS2Gen-1.0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Librelist Is Now Fully Functional</title><link>http://librelist.com/blog/2009-07-19.html</link><description>&lt;h2&gt;&lt;a href="/blog/2009-07-19.html"&gt;2009-07-19&lt;/a&gt; : Librelist Is Now Fully Functional&lt;/h2&gt;
+<rss version="2.0"><channel><title>librelist.com</title><link>http://librelist.com</link><description>No logins. No tracking. Just lists.</description><lastBuildDate>Sat, 12 Dec 2009 17:19:19 GMT</lastBuildDate><generator>PyRSS2Gen-1.0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Librelist Is Now Fully Functional</title><link>http://librelist.com/blog/2009-07-19.html</link><description>&lt;h2&gt;&lt;a href="/blog/2009-07-19.html"&gt;2009-07-19&lt;/a&gt; : Librelist Is Now Fully Functional&lt;/h2&gt;
 
 &lt;p&gt;	&lt;p&gt;Alright, I managed to get all of the basic features going for librelist.com
 early.&lt;/p&gt;
@@ -12,7 +12,7 @@ early.&lt;/p&gt;
 		&lt;li&gt;Emails in the archive are stripped of most useless headers and the sender&amp;#8217;s name is cleaned up a bit.  It&amp;#8217;s not fool-proof, but then again you are sending your address on the internets to a public list, so I hope you are wearing protection.&lt;/li&gt;
 	&lt;/ul&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="/blog/2009-07-19.html"&gt;Read more...&lt;/a&gt;&lt;/p&gt;
-</description><guid isPermaLink="true">http://librelist.com/blog/2009-07-19.html</guid><pubDate>Sat, 26 Sep 2009 10:21:05 GMT</pubDate></item><item><title>Site Launched</title><link>http://librelist.com/blog/2009-07-17.html</link><description>&lt;h2&gt;&lt;a href="/blog/2009-07-17.html"&gt;2009-07-17&lt;/a&gt; : Site Launched&lt;/h2&gt;
+</description><guid isPermaLink="true">http://librelist.com/blog/2009-07-19.html</guid><pubDate>Sat, 12 Dec 2009 17:05:26 GMT</pubDate></item><item><title>Site Launched</title><link>http://librelist.com/blog/2009-07-17.html</link><description>&lt;h2&gt;&lt;a href="/blog/2009-07-17.html"&gt;2009-07-17&lt;/a&gt; : Site Launched&lt;/h2&gt;
 
 &lt;p&gt;	&lt;p&gt;&lt;a href="http://librelist.com/"&gt;Librelist.com&lt;/a&gt; is the third &lt;a href="http://lamsonproject.org/"&gt;Lamson
 Project&lt;/a&gt; sample created to show off what
@@ -23,4 +23,4 @@ advanced spam blocking and bounce handling.&lt;/p&gt;
 &lt;a href="mailto:test.list@librelist.com"&gt;test.list@librelist.com&lt;/a&gt; and you&amp;#8217;ll be
 able to test it out with a bunch of other folks.&lt;/p&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="/blog/2009-07-17.html"&gt;Read more...&lt;/a&gt;&lt;/p&gt;
-</description><guid isPermaLink="true">http://librelist.com/blog/2009-07-17.html</guid><pubDate>Sat, 26 Sep 2009 10:20:21 GMT</pubDate></item></channel></rss>
+</description><guid isPermaLink="true">http://librelist.com/blog/2009-07-17.html</guid><pubDate>Sat, 12 Dec 2009 17:02:13 GMT</pubDate></item></channel></rss>

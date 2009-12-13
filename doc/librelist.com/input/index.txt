@@ -1,7 +1,7 @@
 From: Zed
 Title: Welcome to librelist.com
 
-Librelist.com is a free as in freedom mailing list site for open source
+Librelist is a free as in freedom mailing list site for open source
 projects.  It is a place for FOSS communities to discuss all the things
 they want without ads, censorship, signup requirements, bundled apps, or
 requirements that you use any particular email client or service.
@@ -13,26 +13,12 @@ You can make a mailing list by simply sending an email to
 and subscribe you.  That's all there is to it, and no restrictions on
 making the lists.
 
-If the list exists already, then you're subscribed and your original
-email is sent to them.
-
 
 h2. Anyone Can Subscribe To A List
 
 You also subscribe to a list by simply sending your first message to
 *list*@librelist.com.  That's it.  It ditches your original message and
 sends you a confirmation you reply to.  No signup or web forms involved.
-
-
-h2. Nobody Can Be Taken Off
-
-The "libre" in the name means freedom for everyone to discuss their
-opinions, so nobody will have the right to boot you off or enforce
-arbitrary "list Nazi" rules simply because you disagree with them.
-
-That of course doesn't mean you should act like a jerk, but the
-librelist.com philosophy is that healthy communities can survive and
-need "trolls".
 
 
 h2. Spam And Bounce Blocking
@@ -45,13 +31,20 @@ Bounced emails are caught and anyone who bounces has all of their
 subscriptions paused until they can fix the problem and reinstate
 themselves.
 
-h2. Current Status
+h2. Archives via Rsync
 
-As of *19 JUL 2009* the system is running and mailing lists are
-functional, with bounce detection running.
+All archives are accessible efficiently via rsync as maildir directories.
+This means you can host your mailing list archives on your project's site
+rather than directing users to Librelist.  Librelist also provides simple
+archive browsing for smaller projects that can't host themselves.
 
-Archives are up in basic form at "/browser/":/browser/ and there's
-also rsync access to the mailing list archives.  Mail put into the
-archives is cleansed of most headers that don't matter to the conversation
-and the sender's email address is spam-protected a little bit.
+You can read about it more in the "help":/help.html with more information
+being planned.
+
+
+h2. Support
+
+You can get support and other help by either joining *meta@librelist.com*
+or filing a ticket at the "support site":http://support.librelist.com/ 
+if it's a bug or feature request.
 

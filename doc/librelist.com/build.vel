@@ -17,7 +17,7 @@ targets(
             $ bzr commit
 
         gen [
-            $ python webgen.py
+            $ python webgen.py force
         ]
 
         sync [
