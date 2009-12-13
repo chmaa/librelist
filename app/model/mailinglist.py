@@ -84,7 +84,12 @@ def post_message(relay, message, list_name, host):
 
     for sub in mlist.subscription_set.all().values('subscriber_address'):
         list_addr = "%s@%s" % (list_name, host)
-        delivery = craft_response(message, list_name, list_addr) 
+        delivery = craft_response(message, list_name, list_addr)
+        subject_mod = "[%s]" % list_name
+
+        if subject_mod not in delivery['subject']:
+            delivery['subject'] = subject_mod + " " + delivery['subject']
+
         relay.deliver(delivery, To=sub['subscriber_address'], From=list_addr)
 
 
