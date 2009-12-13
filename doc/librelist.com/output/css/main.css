@@ -60,6 +60,9 @@ ul.notifications li div h3 {
     margin-bottom:15px;
     margin-top: 5px;
     font-size: 18px;
+	letter-spacing:-1px;
+	word-spacing: 4px;
+	font-weight: bold;
 }
 ul.notifications li div p {
     padding-left:10px;
@@ -74,15 +77,16 @@ ul.notifications li div p a {
     text-decoration: none;
     font-family: Arial, sans-serif;
 }
-ul.notifications li div p a:hover {
-    text-decoration:underline;
+ul.notifications li div p a:hover, div.post h2 a:hover, div.post a:hover {
+  	color:#c70000;
+	text-decoration: underline;
 }
 ul.notifications li.footer div p {
     line-height:17px;
 }
 div.content {
     position: absolute;
-    top: 20px;
+    top: -10px;
     right: 0px;
     width: 660px;
 }
@@ -91,6 +95,7 @@ div.post {
     padding-bottom:20px;
     padding-top:10px;
     margin-bottom: 20px;
+	font-size: 14px;
 }
 div.post p a {
     color:#000000;
@@ -114,16 +119,22 @@ div.post pre.code {
 div.post h2 {
     color:#111;
     display:block;
-    font-size:29px;
-    text-decoration:none;
+    font-size:21px;
     font-weight: bold;
+	letter-spacing:-1px;
+	word-spacing: 4px;
+	margin-top: 30px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #eee;
 }
-div.post h2 a:hover {
-    color:#c70000;
+div.post h2 a {
+	color: #111;
+	text-decoration:none;
+	font-weight: bold;
 }
 div.post p, div.post ul {
-    padding:15px 25px 5px;
-    line-height: 20px;
+	padding:15px 25px 5px;
+	line-height: 20px;
 }
 
 div.post ul li {
