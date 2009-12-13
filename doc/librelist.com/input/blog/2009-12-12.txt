@@ -4,7 +4,7 @@ I've started working the "ticket queue":http://support.librelist.com/rptview?rn=
 little annoying things that people wanted or that were missing.  I'm still going to be doing
 deploys today in my attempt to get things cleaned up further, but so far I've done the following:
 
-<pre>
+<pre class="code">
 === 2009-12-13 ===
 01:47:47 [3356e9d42c] *CURRENT* Stop altering the email addresses in the
          archives. (user: zedshaw tags: trunk)
