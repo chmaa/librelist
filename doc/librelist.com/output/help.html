@@ -78,16 +78,22 @@ own list.</p>
 
 	<p>Your project of course has full access to these archives, and they are fully
 public, so that means you also get <strong>rsync access</strong> to the archives.  Simply
-use <code>rsync -azv librelist.com::archives/LIST/YEAR/MO/DAY/queue</code> and you&#8217;ll get that
-date as a Maildir queue.  When in doubt find the path you need using
-the <a href="/browser/">web interface</a> and go from there.</p>
+use:</p>
 
-	<p>Of course, you can also grab the entire site&#8217;s archives, or all of a list at
-once, but don&#8217;t be a jerk.  This service is provided for free, so if the
-rsync is abused it will be taken off or restricted to trusted people.</p>
+<pre class="code">
+rsync -azv librelist.com::archives/LIST/YEAR/MO/DAY/queue
+</pre>
+
+	<p>and you&#8217;ll get that date as a Maildir queue.  When in doubt find the path you
+need using the <a href="/archives/">json web interface</a> and go from there.</p>
+
+	<p>We prefer that if you&#8217;re going to rsync a mailing list, please just get the few you 
+need and don&#8217;t do it more than a few times a day.  Definitely <strong>use rsync</strong> and not
+the <span class="caps">JSON</span> interfave to get the updates.  Rsync is infinitely more friendly for this kind
+of work.</p>
 
 	<p>To be nice, please ask on the <a href="mailto:meta@librelist.com">meta@librelist.com</a>
-mailing list if you can grab all of a list.</p>
+mailing list if you plan to grab all of the lists.</p>
 
 
                 </div>

@@ -13,10 +13,12 @@ similar lists (in case you spelled it wrong).  If you really want
 the list created, then just reply like normal and you'll get your
 list, get subscribed, and have your first send in one shot.
 
+
 h2. List Names
 
 The names of lists can be characters, numbers, and dot ('.') characters.
 *Nothing else.*  They also have to be *ASCII* characters.
+
 
 h2. Unsubscribing
 
@@ -24,6 +26,7 @@ When you subscribe you get an email that tells you how to unsusbcribe
 by sending an email to LIST-unsubscribe@librelist.com.  Of course
 put the list you want to leave in place of LIST.  You'll get a confirmation
 and then you'll be taken off.
+
 
 h2. Archives
 
@@ -35,14 +38,20 @@ own list.
 
 Your project of course has full access to these archives, and they are fully
 public, so that means you also get *rsync access* to the archives.  Simply
-use @rsync -azv librelist.com::archives/LIST/YEAR/MO/DAY/queue@ and you'll get that
-date as a Maildir queue.  When in doubt find the path you need using
-the "web interface":/browser/ and go from there.
+use:
 
-Of course, you can also grab the entire site's archives, or all of a list at
-once, but don't be a jerk.  This service is provided for free, so if the
-rsync is abused it will be taken off or restricted to trusted people.
+<pre class="code">
+rsync -azv librelist.com::archives/LIST/YEAR/MO/DAY/queue
+</pre>
+
+and you'll get that date as a Maildir queue.  When in doubt find the path you
+need using the "json web interface":/archives/ and go from there.
+
+We prefer that if you're going to rsync a mailing list, please just get the few you 
+need and don't do it more than a few times a day.  Definitely *use rsync* and not
+the JSON interfave to get the updates.  Rsync is infinitely more friendly for this kind
+of work.
 
 To be nice, please ask on the "meta@librelist.com":mailto:meta@librelist.com
-mailing list if you can grab all of a list.
+mailing list if you plan to grab all of the lists.
 
