@@ -68,9 +68,6 @@ def white_list_cleanse(message):
         if key not in ALLOWED_HEADERS:
             del message[key]
 
-    message['from'] = message['from'].replace(u'@',u'-AT-')
-   
-
 def json_encoding(base):
     ctype, ctp = base.content_encoding['Content-Type']
     cdisp, cdp = base.content_encoding['Content-Disposition']
