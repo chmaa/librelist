@@ -5,6 +5,7 @@ from lamson.mail import MailResponse
 from config import settings
 from lib import metaphone
 import Stemmer
+from app.model.archive import build_index
 
 def stem_and_meta(list_name):
     s = Stemmer.Stemmer('english')
@@ -23,6 +24,7 @@ def create_list(list_name):
                             similarity_pri = sim_pri,
                             similarity_sec = sim_sec)
         mlist.save()
+        build_index()
 
     return mlist
 

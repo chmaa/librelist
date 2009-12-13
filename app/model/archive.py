@@ -1,5 +1,5 @@
 from __future__ import with_statement
-from lamson import queue
+from lamson import queue, view
 from config import settings
 from datetime import datetime
 import os
@@ -97,3 +97,7 @@ def json_build(base):
 def to_json(base):
     return json.dumps(json_build(base), sort_keys=True, indent=4)
 
+def build_index():
+    lists = os.listdir(settings.ARCHIVE_BASE)
+    html = view.render(locals(), "web/list_index.html")
+    open(os.path.join(settings.ARCHIVE_BASE, "lists.html"), "w").write(html)

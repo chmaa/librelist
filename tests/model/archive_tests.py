@@ -4,6 +4,8 @@ from lamson.mail import MailRequest, MailResponse
 from app.model import archive, mailinglist
 import simplejson as json
 import shutil
+import os
+from config import settings
 
 queue_path = archive.store_path('test.list', 'queue')
 json_path = archive.store_path('test.list', 'json')
@@ -57,3 +59,7 @@ def test_to_json():
     rtjs = json.loads(js)
     assert rtjs
     assert rtjs['parts'][-1]['encoding']['format'] == 'base64'
+
+def test_build_index():
+    archive.build_index()
+    assert os.path.exists(settings.ARCHIVE_BASE + "/lists.html")
