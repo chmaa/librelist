@@ -35,6 +35,11 @@ def SPAMMING(message, **options):
 @bounce_to(soft=bounce.BOUNCED_SOFT, hard=bounce.BOUNCED_HARD)
 @spam_filter(SPAM['db'], SPAM['rc'], SPAM['queue'], next_state=SPAMMING)
 def START(message, list_name=None, host=None, bad_list=None):
+
+    if message.route_from.lower().startswith("mailer-daemon"):
+        logging.info("A damn mailer daemon message came in and wasn't handled by bounce.")
+        return START
+
     if bad_list:
         if '-' in bad_list:
             # probably put a '.' in it, try to find a similar list
@@ -131,10 +136,6 @@ def CONFIRMING_UNSUBSCRIBE(message, list_name=None, id_number=None, host=None):
 @route("(address)@(host)", address=".+")
 @spam_filter(SPAM['db'], SPAM['rc'], SPAM['queue'], next_state=SPAMMING)
 def BOUNCING(message, address=None, host=None):
-    msg = view.respond(locals(), 'mail/we_have_disabled_you.msg',
-                       From='unbounce@librelist.com',
-                       To=message['from'],
-                       Subject='You have bounced and are disabled.')
-    relay.deliver(msg)
+    # don't send out a message if they are bouncing
     return BOUNCING
 

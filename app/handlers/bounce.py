@@ -26,8 +26,6 @@ def BOUNCED_HARD(message):
 def BOUNCED_SOFT(message):
     if mailinglist.find_subscriptions(message.bounce.final_recipient):
         force_to_bounce_state(message)
-        msg = bounce.mail_to_you_is_bouncing(message)
-        relay.deliver(msg)
 
     bounce.archive_bounce(message)
     return handlers.admin.START

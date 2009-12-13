@@ -48,11 +48,12 @@ def test_hard_bounce_disables_user():
     assert not mailinglist.find_subscriptions(sender, list_addr)
 
     # make sure that any attempts to post return a "you're bouncing dude" message
-    unbounce = client.say(list_addr, 'So anyway as I was saying.', 'unbounce')
+    client.say(list_addr, 'So anyway as I was saying.')
+    assert not delivered('unbounce')
     assert_in_state('app.handlers.admin', list_addr, sender, 'BOUNCING')
    
     # now have them try to unbounce
-    msg = client.say(unbounce['from'], "Please put me back on, I'll be good.",
+    msg = client.say('unbounce@librelist.com', "Please put me back on, I'll be good.",
                      'unbounce-confirm')
 
     # handle the bounce confirmation
@@ -86,16 +87,17 @@ def test_soft_bounce_tells_them():
     Router.deliver(msg)
     assert_in_state('app.handlers.admin', list_addr, sender, 'BOUNCING')
     assert_in_state('app.handlers.bounce', list_addr, sender, 'BOUNCING')
-    assert delivered('unbounce'), "Looks like unbounce didn't go out."
+    assert not delivered('unbounce'), "We shouldn't be sending on bounde."
     assert_equal(len(queue(queue_dir=settings.BOUNCE_ARCHIVE).keys()), 1)
     assert not mailinglist.find_subscriptions(sender, list_addr)
 
     # make sure that any attempts to post return a "you're bouncing dude" message
-    unbounce = client.say(list_addr, 'So anyway as I was saying.', 'unbounce')
+    client.say(list_addr, 'So anyway as I was saying.')
+    assert not delivered('unbounce')
     assert_in_state('app.handlers.admin', list_addr, sender, 'BOUNCING')
 
     # now have them try to unbounce
-    msg = client.say(unbounce['from'], "Please put me back on, I'll be good.",
+    msg = client.say('unbounce@librelist.com', "Please put me back on, I'll be good.",
                      'unbounce-confirm')
 
     # handle the bounce confirmation

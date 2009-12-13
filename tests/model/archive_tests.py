@@ -26,7 +26,7 @@ def test_archive_enqueue():
     assert archived, "Didn't get archived."
     as_string = str(archived)
 
-    assert '-AT-' in str(archived), "Didn't get obfuscated"
+    assert '-AT-' not in str(archived), "Should not longer be obfuscated"
     assert '<' in as_string and '"' in as_string and '>' in as_string, "Unicode email screwed up."
 
 
@@ -40,7 +40,7 @@ def test_white_list_cleanse():
     for key in resp.keys():
         assert key in archive.ALLOWED_HEADERS
 
-    assert '@' not in resp['from']
+    assert '@' in resp['from']
     assert str(resp)
 
 def test_to_json():
