@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>librelist.com</title><link>http://librelist.com</link><description>No logins. No tracking. Just lists.</description><lastBuildDate>Sat, 12 Dec 2009 17:19:19 GMT</lastBuildDate><generator>PyRSS2Gen-1.0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Librelist Is Now Fully Functional</title><link>http://librelist.com/blog/2009-07-19.html</link><description>&lt;h2&gt;&lt;a href="/blog/2009-07-19.html"&gt;2009-07-19&lt;/a&gt; : Librelist Is Now Fully Functional&lt;/h2&gt;
+<rss version="2.0"><channel><title>librelist.com</title><link>http://librelist.com</link><description>No logins. No tracking. Just lists.</description><lastBuildDate>Sat, 12 Dec 2009 18:23:47 GMT</lastBuildDate><generator>PyRSS2Gen-1.0.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Few Updates To Librelist</title><link>http://librelist.com/blog/2009-12-12.html</link><description>&lt;h2&gt;&lt;a href="/blog/2009-12-12.html"&gt;2009-12-12&lt;/a&gt; : A Few Updates To Librelist&lt;/h2&gt;
+
+&lt;p&gt;	&lt;p&gt;I&amp;#8217;ve started working the &lt;a href="http://support.librelist.com/rptview?rn=2"&gt;ticket queue&lt;/a&gt; and managed to get out a few
+little annoying things that people wanted or that were missing.  I&amp;#8217;m still going to be doing
+deploys today in my attempt to get things cleaned up further, but so far I&amp;#8217;ve done the following:&lt;/p&gt;
+
+&lt;pre&gt;
+=== 2009-12-13 ===
+01:47:47 [3356e9d42c] *CURRENT* Stop altering the email addresses in the
+         archives. (user: zedshaw tags: trunk)
+01:40:30 [d7211e427a] The mailing list name is now added to the subject if not
+         there already. (user: zedshaw tags: trunk)
+01:29:33 [39d5ddc37b] New site layout done and pushed. (user: zedshaw tags:
+         trunk)
+=== 2009-12-12 ===
+23:36:37 [cc081005a1] Added the librelist website code. (user: zedshaw tags:
+         trunk)
+=== 2009-12-01 ===
+04:34:15 [0b6a443b36] Initial commit after moving from lamson project. (user:
+         zedshaw tags: trunk)
+04:32:14 [37f03800c8] initial empty check-in (user: zedshaw tags: trunk)
+&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="/blog/2009-12-12.html"&gt;Read more...&lt;/a&gt;&lt;/p&gt;
+</description><guid isPermaLink="true">http://librelist.com/blog/2009-12-12.html</guid><pubDate>Sat, 12 Dec 2009 18:23:41 GMT</pubDate></item><item><title>Librelist Is Now Fully Functional</title><link>http://librelist.com/blog/2009-07-19.html</link><description>&lt;h2&gt;&lt;a href="/blog/2009-07-19.html"&gt;2009-07-19&lt;/a&gt; : Librelist Is Now Fully Functional&lt;/h2&gt;
 
 &lt;p&gt;	&lt;p&gt;Alright, I managed to get all of the basic features going for librelist.com
 early.&lt;/p&gt;

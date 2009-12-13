@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <link rel="stylesheet" type="text/css" href="/css/reset.css" />
         <link rel="stylesheet" type="text/css" href="/css/main.css" />
-        <title>Librelist: librelist.com News</title>
+        <title>Librelist: A Few Updates To Librelist</title>
 	
     </head>
 
@@ -40,10 +40,8 @@
             </ul>
             <div class="content">
                 <div class="post">
-                <h2>librelist.com News</h2>
-                <h2><a href="/blog/2009-12-12.html">2009-12-12</a> : A Few Updates To Librelist</h2>
-
-<p>	<p>I&#8217;ve started working the <a href="http://support.librelist.com/rptview?rn=2">ticket queue</a> and managed to get out a few
+                <h2>A Few Updates To Librelist</h2>
+                	<p>I&#8217;ve started working the <a href="http://support.librelist.com/rptview?rn=2">ticket queue</a> and managed to get out a few
 little annoying things that people wanted or that were missing.  I&#8217;m still going to be doing
 deploys today in my attempt to get things cleaned up further, but so far I&#8217;ve done the following:</p>
 
@@ -62,32 +60,19 @@ deploys today in my attempt to get things cleaned up further, but so far I&#8217
 04:34:15 [0b6a443b36] Initial commit after moving from lamson project. (user:
          zedshaw tags: trunk)
 04:32:14 [37f03800c8] initial empty check-in (user: zedshaw tags: trunk)
-</pre></p>
-<p><a href="/blog/2009-12-12.html">Read more...</a></p>
-<h2><a href="/blog/2009-07-19.html">2009-07-19</a> : Librelist Is Now Fully Functional</h2>
+</pre>
 
-<p>	<p>Alright, I managed to get all of the basic features going for librelist.com
-early.</p>
+	<p>What this means is there&#8217;s a new site that is clean and simple, some cleaned up docs that
+will expand as I work on things, and a couple of new features:</p>
 
 	<ul>
-		<li>Bounce detection is working great, but still needs more real world beatings.</li>
-		<li>When you subscribe, if the list doesn&#8217;t exist, it sends you some possible similar existing ones, just in case you spelled it wrong.</li>
-		<li>There&#8217;s now web archives (very basic) at <a href="/browser/">/browser/</a> that you can browse.</li>
-		<li>You can get the archives via rsync too, but don&#8217;t be a jerkwad about this.  Find a path you want and then do <code>rsync -azv librelist.com::archives/PATH</code> and you&#8217;ll get a maildir.</li>
-		<li>Emails in the archive are stripped of most useless headers and the sender&#8217;s name is cleaned up a bit.  It&#8217;s not fool-proof, but then again you are sending your address on the internets to a public list, so I hope you are wearing protection.</li>
-	</ul></p>
-<p><a href="/blog/2009-07-19.html">Read more...</a></p>
-<h2><a href="/blog/2009-07-17.html">2009-07-17</a> : Site Launched</h2>
+		<li>List names are prepended to the subject line like [meta] if it&#8217;s not in the subject already.</li>
+		<li>The archives no longer mangle email addresses with <del>AT</del>.  It wasn&#8217;t helping and it made it too hard for people to archive.</li>
+		<li>You can now CC or multi-To a librelist and it&#8217;ll get sent.  Previously I blocked these but too many people were doing it so I&#8217;m letting it go through.</li>
+	</ul>
 
-<p>	<p><a href="http://librelist.com/">Librelist.com</a> is the third <a href="http://lamsonproject.org/">Lamson
-Project</a> sample created to show off what
-Lamson can do.  It is a fully functioning mailing list system with
-advanced spam blocking and bounce handling.</p>
+	<p>I&#8217;ll be trying to close out as many of those defects as possible, so stay tuned.</p>
 
-	<p>If you want to play with it, send an email to
-<a href="mailto:test.list@librelist.com">test.list@librelist.com</a> and you&#8217;ll be
-able to test it out with a bunch of other folks.</p></p>
-<p><a href="/blog/2009-07-17.html">Read more...</a></p>
 
                 </div>
 			</div>
