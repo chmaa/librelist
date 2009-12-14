@@ -26,6 +26,8 @@ def module_and_to(module_name, message):
 
 @route("(address)@(host)", address='.+')
 def SPAMMING(message, **options):
+    spam = queue.Queue(SPAM['queue'])
+    spam.push(message)
     return SPAMMING
 
 
@@ -35,10 +37,6 @@ def SPAMMING(message, **options):
 @bounce_to(soft=bounce.BOUNCED_SOFT, hard=bounce.BOUNCED_HARD)
 @spam_filter(SPAM['db'], SPAM['rc'], SPAM['queue'], next_state=SPAMMING)
 def START(message, list_name=None, host=None, bad_list=None):
-
-    if message.route_from.lower().startswith("mailer-daemon"):
-        logging.info("A damn mailer daemon message came in and wasn't handled by bounce.")
-        return START
 
     if bad_list:
         if '-' in bad_list:
