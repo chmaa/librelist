@@ -55,13 +55,9 @@ ul.notifications li {
     border-bottom: 1px solid #eee;
 }
 
-ul.notifications li div h3 {
-    font-family: Georgia, serif;
-    margin-bottom:15px;
-    margin-top: 5px;
-    font-size: 18px;
-	letter-spacing:-1px;
-	word-spacing: 4px;
+ul.notifications li h3 {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
 	font-weight: bold;
 }
 ul.notifications li div p {
@@ -97,7 +93,7 @@ div.post {
     margin-bottom: 20px;
 	font-size: 14px;
 }
-div.post p a {
+div.post p a, div.post ul li a {
     color:#000000;
     font-weight:bold;
     text-decoration:none;
@@ -135,6 +131,7 @@ div.post h2 a {
 div.post p, div.post ul {
 	padding:15px 25px 5px;
 	line-height: 20px;
+	font-family: Arial, sans-serif;
 }
 
 div.post ul li {
