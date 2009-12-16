@@ -54,9 +54,9 @@ def START(message, list_name=None, host=None, bad_list=None):
 
         return START
 
-    elif list_name in INVALID_LISTS or message['from'].endswith(host):
+    elif list_name in INVALID_LISTS or message.route_from.endswith(host):
         logging.debug("LOOP MESSAGE to %r from %r.", message['to'],
-                     message['from'])
+                     message.route_from)
         return START
 
     elif mailinglist.find_list(list_name):
@@ -77,10 +77,10 @@ def CONFIRMING_SUBSCRIBE(message, list_name=None, id_number=None, host=None):
     list_name = list_name.lower() if list_name else None
     host = host.lower() if host else None
 
-    original = CONFIRM.verify(list_name, message['from'], id_number)
+    original = CONFIRM.verify(list_name, message.route_from, id_number)
 
     if original:
-        mailinglist.add_subscriber(message['from'], list_name)
+        mailinglist.add_subscriber(message.route_from, list_name)
 
         msg = view.respond(locals(), "mail/subscribed.msg",
                            From="noreply@%(host)s",
@@ -92,7 +92,7 @@ def CONFIRMING_SUBSCRIBE(message, list_name=None, id_number=None, host=None):
 
         return POSTING
     else:
-        logging.warning("Invalid confirm from %s", message['from'])
+        logging.warning("Invalid confirm from %s", message.route_from)
         return CONFIRMING_SUBSCRIBE
 
 
@@ -122,10 +122,10 @@ def CONFIRMING_UNSUBSCRIBE(message, list_name=None, id_number=None, host=None):
     list_name = list_name.lower() if list_name else None
     host = host.lower() if host else None
 
-    original = CONFIRM.verify(list_name, message['from'], id_number)
+    original = CONFIRM.verify(list_name, message.route_from, id_number)
 
     if original:
-        mailinglist.remove_subscriber(message['from'], list_name)
+        mailinglist.remove_subscriber(message.route_from, list_name)
 
         msg = view.respond(locals(), 'mail/unsubscribed.msg',
                            From="noreply@%(host)s",
@@ -133,11 +133,12 @@ def CONFIRMING_UNSUBSCRIBE(message, list_name=None, id_number=None, host=None):
                            Subject="You are now unsubscribed from %(list_name)s.")
         relay.deliver(msg)
 
-        CONFIRM.cancel(list_name, message['from'], id_number)
+        CONFIRM.cancel(list_name, message.route_from, id_number)
 
         return START
     else:
-        logging.warning("Invalid unsubscribe confirm from %s", message['from'])
+        logging.warning("Invalid unsubscribe confirm from %s",
+                        message.route_from)
         return CONFIRMING_UNSUBSCRIBE
 
 

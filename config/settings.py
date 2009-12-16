@@ -16,7 +16,7 @@ receiver_config = {'host': 'localhost', 'port': 8823}
 handlers = ['app.handlers.bounce', 'app.handlers.admin']
 
 router_defaults = {
-    'host': 'librelist\\.com',
+    'host': 'librelist\\.(com|org|net)',
     'list_name': '[a-zA-Z0-9\.]+',
     'id_number': '[a-z0-9]+',
 }

@@ -8,6 +8,8 @@ class UserStateStorage(StateStorage):
             state.delete()
 
     def _find_state(self, key, sender):
+        sender = sender.lower()
+        key = key.lower()
         states = UserState.objects.filter(state_key = key,
                                           from_address = sender)
         if states:
@@ -16,6 +18,8 @@ class UserStateStorage(StateStorage):
             return None
 
     def get(self, key, sender):
+        sender = sender.lower()
+        key = key.lower()
         stored_state = self._find_state(key, sender)
         if stored_state:
             return stored_state.state
@@ -26,6 +30,8 @@ class UserStateStorage(StateStorage):
         raise Exception("THIS METHOD MEANS NOTHING TO DJANGO!")
 
     def set(self, key, sender, to_state):
+        sender = sender.lower()
+        key = key.lower()
         stored_state = self._find_state(key, sender)
 
         if stored_state:
@@ -48,6 +54,7 @@ class UserStateStorage(StateStorage):
         control the states for all of the app.handlers.admin
         lists during a bounce.
         """
+        sender = sender.lower()
         stored_states = UserState.objects.filter(from_address = sender)
 
         for stored in stored_states:

@@ -29,9 +29,11 @@ def create_list(list_name):
     return mlist
 
 def delete_list(list_name):
+    assert list_name == list_name.lower()
     MailingList.objects.filter(name = list_name).delete()
 
 def find_list(list_name):
+    assert list_name == list_name.lower()
     mlists = MailingList.objects.filter(name = list_name)
     if mlists:
         return mlists[0]
@@ -39,6 +41,7 @@ def find_list(list_name):
         return None
 
 def add_subscriber(address, list_name):
+    assert list_name == list_name.lower()
     mlist = create_list(list_name)
     sub_name, sub_addr = parseaddr(address)
     subs = find_subscriptions(address, list_name)
@@ -53,12 +56,14 @@ def add_subscriber(address, list_name):
         return subs[0]
 
 def remove_subscriber(address, list_name):
+    assert list_name == list_name.lower()
     find_subscriptions(address, list_name).delete()
 
 def remove_all_subscriptions(address):
     find_subscriptions(address).delete()
 
 def find_subscriptions(address, list_name=None):
+    if list_name: assert list_name == list_name.lower()
     sub_name, sub_addr = parseaddr(address)
 
     if list_name:
@@ -81,6 +86,7 @@ def find_subscriptions(address, list_name=None):
 
 
 def post_message(relay, message, list_name, host):
+    assert list_name == list_name.lower()
     mlist = find_list(list_name)
     assert mlist, "User is somehow able to post to list %s" % list_name
 
@@ -97,6 +103,7 @@ def post_message(relay, message, list_name, host):
 
 
 def craft_response(message, list_name, list_addr):
+    assert list_name == list_name.lower()
     response = MailResponse(To=list_addr, 
                             From=message['from'],
                             Subject=message['subject'])
