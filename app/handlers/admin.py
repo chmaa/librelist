@@ -5,7 +5,6 @@ from lamson import view, queue
 from lamson.routing import route, stateless, route_like, state_key_generator
 from lamson.bounce import bounce_to
 from lamson.server import SMTPError
-from lamson.spam import spam_filter
 from app.model import mailinglist, bounce, archive
 from app.handlers import bounce
 
@@ -35,8 +34,10 @@ def SPAMMING(message, **options):
 @route('(list_name)@(host)')
 @route('(list_name)-subscribe@(host)')
 @bounce_to(soft=bounce.BOUNCED_SOFT, hard=bounce.BOUNCED_HARD)
-@spam_filter(SPAM['db'], SPAM['rc'], SPAM['queue'], next_state=SPAMMING)
 def START(message, list_name=None, host=None, bad_list=None):
+    list_name = list_name.lower() if list_name else None
+    bad_list = bad_list.lower() if bad_list else None
+    host = host.lower() if host else None
 
     if bad_list:
         if '-' in bad_list:
@@ -73,6 +74,9 @@ def START(message, list_name=None, host=None, bad_list=None):
 
 @route('(list_name)-confirm-(id_number)@(host)')
 def CONFIRMING_SUBSCRIBE(message, list_name=None, id_number=None, host=None):
+    list_name = list_name.lower() if list_name else None
+    host = host.lower() if host else None
+
     original = CONFIRM.verify(list_name, message['from'], id_number)
 
     if original:
@@ -94,8 +98,11 @@ def CONFIRMING_SUBSCRIBE(message, list_name=None, id_number=None, host=None):
 
 @route('(list_name)-(action)@(host)', action='[a-z]+')
 @route('(list_name)@(host)')
-@spam_filter(SPAM['db'], SPAM['rc'], SPAM['queue'], next_state=SPAMMING)
 def POSTING(message, list_name=None, action=None, host=None):
+    list_name = list_name.lower() if list_name else None
+    action = action.lower() if action else None
+    host = host.lower() if host else None
+
     if action == 'unsubscribe':
         action = "unsubscribe from"
         CONFIRM.send(relay, list_name, message, 'mail/confirmation.msg',
@@ -112,6 +119,9 @@ def POSTING(message, list_name=None, action=None, host=None):
 
 @route_like(CONFIRMING_SUBSCRIBE)
 def CONFIRMING_UNSUBSCRIBE(message, list_name=None, id_number=None, host=None):
+    list_name = list_name.lower() if list_name else None
+    host = host.lower() if host else None
+
     original = CONFIRM.verify(list_name, message['from'], id_number)
 
     if original:
@@ -132,7 +142,6 @@ def CONFIRMING_UNSUBSCRIBE(message, list_name=None, id_number=None, host=None):
 
 
 @route("(address)@(host)", address=".+")
-@spam_filter(SPAM['db'], SPAM['rc'], SPAM['queue'], next_state=SPAMMING)
 def BOUNCING(message, address=None, host=None):
     # don't send out a message if they are bouncing
     return BOUNCING
